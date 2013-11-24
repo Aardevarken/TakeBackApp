@@ -14,7 +14,10 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
-          <%= link_to "TakeBackApp", '#', id: "logo" %>
+          <%= link_to "TakeBackApp", root_path, id: "logo" %>
+          <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
           <nav>
             <ul class="nav pull-right">
               <li><%= link_to "Home",    root_path %></li>
