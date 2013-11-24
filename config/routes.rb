@@ -1,6 +1,10 @@
 TakeBackApp::Application.routes.draw do
-  get "users/new"
+  resources :users
 
+  root :to => "take_back_app#home"
+  get '/signup', to:'users#new'
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
