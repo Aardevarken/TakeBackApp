@@ -4,6 +4,10 @@ gem 'rails', '3.1.0'
 gem 'rdoc'
 gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+gem 'strong_parameters'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
