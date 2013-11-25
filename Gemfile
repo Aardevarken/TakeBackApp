@@ -39,6 +39,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'strong_parameters'
 
 # Use unicorn as the web server
 # gem 'unicorn'
