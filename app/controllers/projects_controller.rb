@@ -1,19 +1,24 @@
 class ProjectsController < ApplicationController
+
+
+  def show
+    id = params[:id] # retrieve the project ID from URI route
+    @project=Project.find(params[:id])
+   end
+
+
   def new
   end
 
   def create
-    @project = Project.new(project_params)
-    @project.save
+    @project = Project.create!(params[:project])
+    #@project.save
     flash[:notice] = "#{@project.title} was successfully created!"
     redirect_to @project
 
   end
 
-  def show
-    id = params[:id] # retrieve the project ID from URI route
-    @project = Project.find(params[:id])
-   end
+
 
   def index
 	@projects = Project.all
@@ -23,14 +28,15 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+	@project = Project.find params[:id]
   end
 
   def destroy
   end
 
-private
-  def project_params
-    params.require(:project).permit(:title, :location, :description)
-  end
+#private
+#  def project_params
+#    params.require(:project).permit(:title, :location, :description)
+#  end
 
 end
