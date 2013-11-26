@@ -2,6 +2,12 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'rdoc'
+gem 'bcrypt-ruby'
+gem 'bootstrap-sass'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+gem 'strong_parameters'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -20,6 +26,7 @@ end
 group :test do
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
+  gem 'factory_girl_rails'
 end
 
 group :production do

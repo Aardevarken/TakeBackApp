@@ -1,8 +1,11 @@
 TakeBackApp::Application.routes.draw do
 
-  get "static_pages/home"
-
-  get "static_pages/home"   
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  root :to => "take_back_app#home"
+  get '/signup', to:'users#new'
+  get '/signin', to: 'sessions#new'
+  delete '/signout', to: 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
