@@ -1,0 +1,20 @@
+<h1>List of Projects</h1>
+<table>
+	<thead>
+		<tr>
+			<th> Project Title <th>
+			<th> Project Location <th>
+			<th> Description <th>
+		<tr>
+	</thead>
+	<tbody>
+		<% @project.each do |project| %>
+			<tr>
+				<td><%= project.title %></td>td>
+				<td><%= project.location %></td>td>
+				<td><%= project.description %></td>td>
+			<tr>
+		<% end %>
+	</tbody>
+</table>
+
