@@ -1,5 +1,4 @@
 TakeBackApp::Application.routes.draw do
-<<<<<<< HEAD
   #get "projects/new"
 
   #get "projects/create"
@@ -15,8 +14,6 @@ TakeBackApp::Application.routes.draw do
   #get "projects/destroy"
   
   resources :projects
-=======
->>>>>>> e5bc437c89e3490ead3e0d51370734c84a7ec76d
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
@@ -25,6 +22,7 @@ TakeBackApp::Application.routes.draw do
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
 
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

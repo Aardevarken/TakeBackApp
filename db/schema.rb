@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20131125103445) do
 
   create_table "projects", :force => true do |t|
@@ -20,6 +21,9 @@ ActiveRecord::Schema.define(:version => 20131125103445) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+=======
+ActiveRecord::Schema.define(:version => 20131125214310) do
+>>>>>>> e5bc437c89e3490ead3e0d51370734c84a7ec76d
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -28,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20131125103445) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
+    t.boolean  "admin",           :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

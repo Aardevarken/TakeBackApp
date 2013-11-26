@@ -1,7 +1,19 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:edit, :update]
+  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
+  before_filter :correct_user,   only: [:edit, :update]
+  before_filter :admin_user, only: :destroy
   def new
   	@user = User.new
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted."
+    redirect_to users_url
+  end
+
+  def index
+    @users = User.paginate(page: params[:page])
   end
 
   def show
@@ -9,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(params[:user])
+  	@user = User.new(user_params)
   	if @user.save
       sign_in @user
   		flash[:success] = "Welcome to the TakeBackApp!"
@@ -20,12 +32,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
+    #@user = User.find(params[:id])
+    if @user.update_attributes(user_params)
       # Handle a successful update.
       flash[:success] = "Profile updated"
       redirect_to @user
@@ -35,6 +47,24 @@ class UsersController < ApplicationController
   end
   # Before filters
   def signed_in_user
-      redirect_to signin_url, notice: "Please sign in." unless signed_in?
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
+    end
+
+  def correct_user
+   @user = User.find(params[:id])
+   redirect_to(root_url) unless current_user?(@user)
+  end
+
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
+    end
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
     end
 end

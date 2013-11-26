@@ -1,22 +1,4 @@
 TakeBackApp::Application.routes.draw do
-<<<<<<< HEAD
-  #get "projects/new"
-
-  #get "projects/create"
-
-  #get "projects/show"
-
-  #get "projects/index"
-
-  #get "projects/update"
-
-  #get "projects/edit"
-
-  #get "projects/destroy"
-  
-  resources :projects
-=======
->>>>>>> e5bc437c89e3490ead3e0d51370734c84a7ec76d
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

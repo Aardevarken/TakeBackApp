@@ -1,4 +1,11 @@
-Wed, 20 Nov 2013 12:35:13 -0800
-README	Wed, 20 Nov 2013 11:12:46 -0800
-app/controllers/application_controller.rb	Wed, 20 Nov 2013 12:35:05 -0800
-app/helpers/application_helper.rb	Wed, 20 Nov 2013 11:12:46 -0800
+Mon, 25 Nov 2013 18:35:40 -0800
+README	Sat, 23 Nov 2013 20:05:48 -0800
+app/controllers/application_controller.rb	Sun, 24 Nov 2013 11:17:30 -0800
+app/controllers/sessions_controller.rb	Mon, 25 Nov 2013 14:42:52 -0800
+app/controllers/take_back_app_controller.rb	Sat, 23 Nov 2013 20:06:41 -0800
+app/controllers/users_controller.rb	Mon, 25 Nov 2013 14:08:19 -0800
+app/helpers/application_helper.rb	Mon, 25 Nov 2013 12:53:53 -0800
+app/helpers/sessions_helper.rb	Mon, 25 Nov 2013 12:57:10 -0800
+app/helpers/take_back_app_helper.rb	Sat, 23 Nov 2013 20:06:42 -0800
+app/helpers/users_helper.rb	Sat, 23 Nov 2013 20:05:48 -0800
+app/models/user.rb	Sun, 24 Nov 2013 22:02:02 -0800
