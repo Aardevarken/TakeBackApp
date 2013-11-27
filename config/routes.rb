@@ -1,5 +1,7 @@
 TakeBackApp::Application.routes.draw do
 
+  resources :projects
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root :to => "take_back_app#home"
