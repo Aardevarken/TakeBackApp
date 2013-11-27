@@ -6,35 +6,11 @@
                                            "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <!--rendering partials-->
+    <%= render 'layouts/shim' %>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <%= link_to "TakeBackApp", root_path, id: "logo" %>
-          <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %>"><%= value %></div>
-          <% end %>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Home",    root_path %></li>
-              <% if signed_in? %>
-                <li><%= link_to "Users", users_path %></li>
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-              <% else %>
-                <li><%= link_to "Sign in", signin_path %></li>
-                <li><%= link_to "Sign up", signup_path %></li>
-              <% end %>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <%= render 'layouts/header' %>
     <div class="container">
       <%= yield %>
     </div>
