@@ -6,19 +6,19 @@ class SessionsController < ApplicationController
 	  user = User.find_by_email(params[:session][:email].downcase)
 	  if user && user.authenticate(params[:session][:password])
 	    # Sign the user in and redirect to the user's show page.
-	    flash[:success] = 'Thanks for Signing In!'
+	    flash[:success] = 'welcome'
 	    sign_in user
       	redirect_back_or user
 	  else
 	    # Create an error message and re-render the signin form.
-	    flash.now[:error] = 'Invalid email/password combination' # Not quite right!
+	    flash.now[:error] = 'invalid email/password combination' # Not quite right!
 	    render 'new'
 	  end
 	end
 
 	def destroy
 		sign_out
-		flash[:success] = 'You have Signed out successfully!'
+		flash[:success] = 'come back soon'
 		redirect_to root_url
 	end
 end
