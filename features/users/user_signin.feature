@@ -4,6 +4,10 @@ Feature: User can sign-in to the TakeBackApp once they have an account
 	So that I can access and create projects
 	I want to be able to sign-in to the site
 
+Scenario: The signin page should have a link to sign up
+  Given I am on the signin page
+  Then I should see "Sign up"
+
 Scenario: Unsuccessful signin
   Given a user visits the signin page
   When she submits invalid signin information
