@@ -12,6 +12,15 @@ def create_visitor
     :password => "changeme", :password_confirmation => "changeme" }
 end
 
+def create_admin
+  @admin = User.create(name: "Testy McUserton", email: "example@example.com",
+    password: "changeme", password_confirmation: "changeme", admin: true )
+  visit signin_path
+  fill_in "Email",    with: @admin.email
+  fill_in "Password", with: @admin.password
+  click_button "Sign in"
+end
+
 def find_user
   @user ||= User.where(:email => @visitor[:email]).first
 end
@@ -121,3 +130,21 @@ When(/^I sign up with a mismatched password confirmation$/) do
   @visitor = @visitor.merge(:password_confirmation => "changeme123")
   sign_up
 end
+
+When(/^I edit my account information$/) do
+  click_link "Settings"
+  fill_in "Name", :with => "Bob"
+  fill_in "Email", :with => "bobobob@example.com"
+  fill_in "Password", :with => "football"
+  fill_in "Confirm Password", :with => "football"
+end
+
+Given(/^there is at least one registered user$/) do
+  @user = User.create(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+end
+
+Given(/^I am logged in as an admin$/) do
+  create_admin
+end
+
+
