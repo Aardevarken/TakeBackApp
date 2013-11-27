@@ -1,5 +1,19 @@
 TakeBackApp::Application.routes.draw do
 
+  get "projects/new"
+
+  get "projects/create"
+
+  get "projects/show"
+
+  get "projects/index"
+
+  get "projects/update"
+
+  get "projects/edit"
+
+  get "projects/destroy"
+
   resources :projects
 
   resources :users
