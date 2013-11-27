@@ -17,6 +17,7 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
+  #it { should respond_to(:email_confirmation) }
 
   describe "with admin attribute set to 'true'" do
     before do
@@ -74,6 +75,11 @@ describe User do
   	end
   	it { should_not be_valid }
   end
+
+  #describe "when email doesn't match confirmation" do
+   # before { @user.email_confirmation = "mismatch@example.com" }
+    #it { should_not be_valid }
+  #end
 
   describe "when password is not present" do
     before do
