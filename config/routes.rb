@@ -7,7 +7,7 @@ TakeBackApp::Application.routes.draw do
   get '/signup', to:'users#new'
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
-  get '/create', to: 'projects#create'
+  get '/create', to: 'projects#new'
   get '/work', to: 'projects#index'
   get '/search', to: 'projects#show'
 
