@@ -1,7 +1,6 @@
 TakeBackApp::Application.routes.draw do
-  
-  resources :projects
 
+  resources :projects
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root :to => "take_back_app#home"
@@ -12,7 +11,6 @@ TakeBackApp::Application.routes.draw do
   get '/work', to: 'projects#index'
   get '/search', to: 'projects#show'
 
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
