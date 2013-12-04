@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-
+  before_filter :signed_in_user
 
   def show
     id = params[:id] # retrieve the project ID from URI route
@@ -11,10 +11,15 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = user.projects.create(project_params)
-    @project.save
-    flash[:notice] = "#{@project.title} was successfully created!"
-    redirect_to @project
+    @project = current_user.projects.build(project_params)
+    if @project.save
+      flash[:notice] = "#{@project.title} was successfully created!"
+      redirect_to root_url
+    else
+      flash[:warning] = "Your project was NOT successfully created! Please try again.."
+      render 'static_pages/home'
+    end
+
 
   end
 
@@ -33,6 +38,9 @@ class ProjectsController < ApplicationController
 
   def destroy
   end
+
+ 
+
 
 private
   def project_params
