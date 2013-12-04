@@ -5,19 +5,22 @@
 <table>
 	<thead>
 		<tr>
-			<th> Project Title <th>
-			<th> Project Location <th>
-			<th> Description <th>
-		<tr>
+			<th> Project Title </th>
+			<th> Project Location </th>
+			<th> Description </th>
+		</tr>
 	</thead>
 	<tbody>
 		<% @project.each do |project| %>
 			<tr>
 				<td><%= project.title %></td>td>
 				<td><%= project.location %></td>td>
-				<td><%= project.description %></td>td>
+				<td><%= link_to "Show", project %></td>
+    			<td><%= link_to "Edit", edit_project_path(project) %></td>
+    			<td><%= link_to "Remove", project, method: :delete, data: { confirm: "Are you sure?" } %></td>
 			<tr>
 		<% end %>
 	</tbody>
 </table>
 
+<%= link_to "Add New Project", new_project_path %>
