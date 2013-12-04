@@ -17,6 +17,7 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
+  it { should respond_to(:projects) }
   #it { should respond_to(:email_confirmation) }
 
   describe "with admin attribute set to 'true'" do
@@ -111,6 +112,21 @@ describe User do
 
       it { should_not eq user_for_invalid_password }
       specify { expect(user_for_invalid_password).to be_false }
+    end
+  end
+
+  describe "project associations" do
+    before { @user.save }
+    let!(:older_projct) do
+       FactoryGirl.create(:project, user: @user, created_at: 1.day.ago)
+    end
+
+    let!(:newer_project) do
+      FactoryGirl.create(:project, user: @user, created_at: 1.hour.ago)
+    end
+
+     it "should have the right projects in the right order" do
+      expect(@user.projects.to_a).to eq [newer_project, older_project]
     end
   end
 end

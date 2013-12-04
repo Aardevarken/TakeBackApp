@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = user.projects.create!(params[:project])
+    @project = user.projects.create(project_params)
     @project.save
     flash[:notice] = "#{@project.title} was successfully created!"
     redirect_to @project

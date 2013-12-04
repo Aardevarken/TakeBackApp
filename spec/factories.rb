@@ -9,4 +9,9 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :project do
+  	title "Building a bridge"
+  	user
+  end
 end
