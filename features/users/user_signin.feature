@@ -6,7 +6,7 @@ Feature: User can sign-in to the TakeBackApp once they have an account
 
 Scenario: The signin page should have a link to sign up
   Given I am on the signin page
-  Then I should see "Sign up"
+  Then I should see "sign up"
 
 Scenario: Unsuccessful signin
   Given a user visits the signin page
