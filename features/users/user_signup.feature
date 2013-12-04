@@ -19,12 +19,12 @@ Scenario: User signs up with invalid email
 Scenario: User signs up without password
 	When I sign up without a password
 	Then I should see an error message
-	And I should still be on the signup page
+	And I should see "Sign up"
 
 Scenario: User signs up without password confirmation
     When I sign up without a password confirmation
     Then I should see an error message
-    And I should still be on the signup page
+    And I should see "Sign up"
 
 Scenario: User signs up with mismatched password and confirmation
     When I sign up with a mismatched password confirmation

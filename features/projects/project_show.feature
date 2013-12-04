@@ -7,4 +7,4 @@ Background:
 Scenario:
   Given I am on the user profile page
   When I follow "List of My Projects"
-  I should should see "delete"
+  Then I should should see "delete"
