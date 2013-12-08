@@ -14,7 +14,7 @@ Scenario: User signs up with valid data
 Scenario: User signs up with invalid email
 	When I sign up with an invalid email
 	Then I should see an error message
-	And I should still be on the signup page
+	And I should see "Sign up"
 
 Scenario: User signs up without password
 	When I sign up without a password
@@ -29,4 +29,4 @@ Scenario: User signs up without password confirmation
 Scenario: User signs up with mismatched password and confirmation
     When I sign up with a mismatched password confirmation
     Then I should see an error message
-    And I should still be on the signup page
+    And I should see "Sign up"

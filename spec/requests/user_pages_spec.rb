@@ -11,6 +11,23 @@ describe "User pages" do
     it { should have_selector('title', :text => "Sign up") }
   end
 
+  describe "work page" do
+    let(:user) { FactoryGirl.create(:user) }
+    let!(:m1) { FactoryGirl.create(:project, user: user, title: "Foo", description: "ehllo", location: "here") }
+    let!(:m2) { FactoryGirl.create(:project, user: user, title: "Bar", description: "hello", location: "here") }
+
+    before { visit work_path }
+
+    it { should have_content(user.name) }
+    it { should have_title(user.name) }
+
+    describe "microposts" do
+      it { should have_content(m1.description) }
+      it { should have_content(m2.title) }
+      it { should have_content(user.projects.count) }
+    end
+  end
+
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
     before { visit user_path(user) }

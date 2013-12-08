@@ -13,11 +13,18 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(page: params[:page])
+    @user = User.find(params[:id])
+    @projects = @user.projects.paginate(page: params[:page])
+  end
+
+  def feed
+    # This is preliminary. See "Following users" for the full implementation.
+    Micropost.where("user_id = ?", id)
   end
 
   def show
-  	@user = User.find(params[:id])
+    @user = User.find(params[:id])
+    @projects = @user.projects.paginate(page: params[:page])
   end
 
   def create

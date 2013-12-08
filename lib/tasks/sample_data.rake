@@ -15,5 +15,12 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+    users = User.all(limit: 6)
+    50.times do
+      description = Faker::Lorem.sentence(5)
+      title = Faker::Lorem.sentence(5)
+      location = Faker::Lorem.sentence(5)
+      users.each { |user| user.projects.create!(description: description, title: title, location: location) }
+    end
   end
 end

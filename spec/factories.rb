@@ -12,6 +12,8 @@ FactoryGirl.define do
 
   factory :project do
   	title "Building a bridge"
-  	user
+    description "Hello"
+    location "Hello"
+  	association :user
   end
 end

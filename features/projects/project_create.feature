@@ -9,5 +9,5 @@ Scenario: User creates a project
   When I fill in "Title" with "New Project"
   And I fill in "Description" with "This is a new Project"
   And I fill in "Location" with "Boulder"
-  And I click "Save Project"
-  Then I should be on the project show page
+  And I press "Save Project"
+  Then I should be on the home page

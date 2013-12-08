@@ -136,7 +136,7 @@ When(/^I edit my account information$/) do
   fill_in "Name", :with => "Bob"
   fill_in "Email", :with => "bobobob@example.com"
   fill_in "Password", :with => "football"
-  fill_in "Confirm Password", :with => "football"
+  fill_in "confirm password", :with => "football"
 end
 
 Given(/^there is at least one registered user$/) do
@@ -146,5 +146,10 @@ end
 Given(/^I am logged in as an admin$/) do
   create_admin
 end
+
+Given(/^I have created a project$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
 
 

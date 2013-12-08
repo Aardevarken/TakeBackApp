@@ -128,5 +128,13 @@ describe User do
      it "should have the right projects in the right order" do
       expect(@user.projects.to_a).to eq [newer_project, older_project]
     end
+    it "should destroy associated microposts" do
+      projects = @user.projects.to_a
+      @user.destroy
+      expect(projects).not_to be_empty
+      projects.each do |project|
+        expect(Project.where(id: project.id)).to be_empty
+      end
+    end
   end
 end
