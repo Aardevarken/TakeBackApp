@@ -4,9 +4,9 @@
   <h1 style= "text-align: center, font-family:Helvetica"> takeback </h1>
 
   	<!--Turn these into links to their pages-->
-  	<h3 style= "text-align:center"> ...<b>create</b> a new project </h3>
-  	<h3 style= "text-align:center"> ...<b>work</b> on a project </h3>
-  	<h3 style= "text-align:center"> ...<b>search</b> for a project </h3>
+  	<h3 style= "text-align:center"> ...<%= link_to "create", create_path %> a new project </h3>
+  	<h3 style= "text-align:center"> ...<%= link_to "work", work_path %> on a project </h3>
+  	<h3 style= "text-align:center"> ...<%= link_to "search", '#' %> for a project </h3>
 
   	<br><br>
   <%= link_to "sign up now!", signup_path, class: "btn btn-large btn-primary" %>
