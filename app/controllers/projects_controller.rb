@@ -20,11 +20,12 @@ class ProjectsController < ApplicationController
       flash[:warning] = "it didn't work. try again."
       render 'static_pages/home'
     end
-
-
   end
 
-
+  def search
+    @project = Project.where("location LIKE ?", "#{params[:search]}%")
+    render :action => :index
+  end
 
   def index
 	  #@user = User.find(params[:id])
