@@ -1,16 +1,18 @@
+<!--SIGN N PAGE-->
+
 <% provide(:title, "sign in") %>
-<h1>Sign in</h1>
+<h1>sign in to takeback</h1>
 
 <div class="row">
   <div class="span6 offset3 center" style= "text-offset:center">
     <%= form_for(:session, url: sessions_path) do |f| %>
 
-      <%= f.label :email %>
+      <%= f.label :email %> <br>
       <%= f.text_field :email %>
 
       <br><br>
 
-      <%= f.label :password %>
+      <%= f.label :password %> <br>
       <%= f.password_field :password %>
 
       <br><br>

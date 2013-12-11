@@ -37,15 +37,9 @@ h1 {
   text-align: center;
 }
 
-/*
 h3 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #999;
-}*/
+  
+}
 
 #logo {
   float: left;
@@ -64,17 +58,10 @@ h3 {
   text-decoration: none;
 }
 
-header a {
-	color: #fff; 
+.head_actions {
+  color: #FFFFFF; 
 }
 
-header a:hover {
-	color: #FF00FF; 
-}
-
-header a.active {
-	background: black;
-}
 
 header {
   float: top;
@@ -88,10 +75,20 @@ header {
   line-height: 1;
 }
 
-header:hover {
-  color: #fff;
-  text-decoration: none;
+body a {
+  font-weight: bold;
+  
 }
+
+body a:hover {
+  text-decoration: none; 
+}
+
+body {
+  /*text-transform: lowercase;*/
+  font-type: Helvetica; 
+}
+
 
 footer {
   margin-top: 45px;

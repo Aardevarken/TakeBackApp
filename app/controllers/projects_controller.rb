@@ -14,10 +14,10 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
-      flash[:notice] = "#{@project.title} was successfully created!"
+      flash[:notice] = "#you created {@project.title}"
       redirect_to work_url
     else
-      flash[:warning] = "Your project was NOT successfully created! Please try again.."
+      flash[:warning] = "it didn't work. try again."
       render 'static_pages/home'
     end
 
