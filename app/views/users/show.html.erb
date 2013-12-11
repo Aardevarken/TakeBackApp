@@ -7,12 +7,12 @@
       </h1>
     </section>
 
-    <%= link_to "Add New Project", new_project_path %>
+    <!--<%= link_to "Add New Project", new_project_path %>-->
    
 
 
   </aside>
-  <div class="span8">
+  <div class="span8 center">
     <% if @user.projects.any? %>
       <h3>Projects (<%= @user.projects.count %>)</h3>
       <ol class="projects">
