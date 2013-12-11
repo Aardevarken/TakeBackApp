@@ -8,12 +8,12 @@
 <% if signed_in? %>
  <div class="span6 offset3 center">
  	<% @current_user.projects.each do |project| %>
- 		<br><br>
- 		<%= link_to project.title, project %><br> 
+ 		<br>
+ 		<h3><%= link_to project.title, project %><br> 
  		<%= project.location %> <br>
- 		<%= link_to "edit", edit_project_path(project) %>
- 		<%= link_to "remove", project, method: :delete, data: { confirm: "are you sure?" } %>
- 		<br><br>
+ 		<%= link_to "edit", edit_project_path(project) %> <b>/</b>
+ 		<%= link_to "remove", project, method: :delete, data: { confirm: "are you sure?" } %></h3>
+ 		
  	<% end %>
  </div>
 
