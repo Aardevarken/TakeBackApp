@@ -8,4 +8,5 @@ class Project < ActiveRecord::Base
     def self.search(search_query)
      find(:all, :conditions => ['title LIKE ?', "%#{search_query}%"])
     end
+
 end

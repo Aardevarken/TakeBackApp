@@ -2,6 +2,10 @@ TakeBackApp::Application.routes.draw do
 
 
 
+  get "pages/search"
+
+  get "pages/result"
+
   resources :projects
 
   resources :users
