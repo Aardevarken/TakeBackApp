@@ -1,15 +1,28 @@
+<div class="span8">
 <h1>Project Information</h1>
-<p>
-  Title: 
-  <%= @project.Title %>
-</p>
+	<p>
+	  Title: 
+	  <%= @project.title %>
+	</p>
  
- <p>
-  Location: 
-  <%= @project.Location %>
-</p>
+ 	<p>
+ 		Location: 
+  		<%= @project.location %>
+	</p>
 
-<p>
-  Description: 
-  <%= @project.Description %>
-</p>
+	<p>
+  		Description: 
+  		<%= @project.description %>
+	</p>
+
+	<p>
+  		Created By:
+   		<%=@current_user.name %>
+ 	</p>
+
+ 	<p>
+    	Created: 
+    	<%= time_ago_in_words(@project.created_at) %> ago!
+    </p>
+
+</div>
