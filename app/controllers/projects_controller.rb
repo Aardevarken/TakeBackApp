@@ -31,9 +31,9 @@ class ProjectsController < ApplicationController
 
   def index
 	  #@user = User.find(params[:id])
+
     if signed_in?
       @projects = current_user.projects.paginate(page: params[:page])
-    else
     end
   end
 

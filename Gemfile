@@ -44,6 +44,7 @@ end
 
 gem 'jquery-rails'
 gem 'strong_parameters'
+gem "meta_search"
 
 # Use unicorn as the web server
 # gem 'unicorn'
