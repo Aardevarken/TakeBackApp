@@ -7,7 +7,7 @@
 
     <% if signed_in? %>
       <%= form_for :project, url: projects_path do |f| %>
-        <p>
+        <p><br>
           <%= f.label :title %><br>
           <%= f.text_field :title %>
         </p>
