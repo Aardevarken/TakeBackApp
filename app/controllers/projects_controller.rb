@@ -25,12 +25,7 @@ class ProjectsController < ApplicationController
   end
 
   def search
-     if :search_query
-       @projects = Project.search(params[:search_query])
-       @projects = @projects.sort!{ |x, y| x["created_at"] <=> y["created_at"] }.reverse
-     else
-       @projects = Project.find(:all, :order => 'projects.created_at').reverse
-     end
+     @projects = Project.search(params[:search])
   end
   
     
