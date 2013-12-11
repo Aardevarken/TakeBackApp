@@ -25,8 +25,7 @@ class ProjectsController < ApplicationController
   end
 
   def search
-    @project = Project.where("location LIKE ?", "#{params[:search]}%")
-    render :action => :index
+    @users = User.all
   end
 
   def index

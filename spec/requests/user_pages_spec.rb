@@ -7,8 +7,8 @@ describe "User pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_content('Sign up') }
-    it { should have_selector('title', :text => "Sign up") }
+    it { should have_content('sign up') }
+    it { should have_selector('title', :text => "sign up") }
   end
 
   describe "work page" do
@@ -21,7 +21,7 @@ describe "User pages" do
     it { should have_content(user.name) }
     it { should have_title(user.name) }
 
-    describe "microposts" do
+    describe "projects" do
       it { should have_content(m1.description) }
       it { should have_content(m2.title) }
       it { should have_content(user.projects.count) }
@@ -40,7 +40,7 @@ describe "User pages" do
 
     before { visit signup_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "create my account" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -50,7 +50,7 @@ describe "User pages" do
       describe "after submission" do
         before { click_button submit }
 
-        it { should have_selector('title', :text => 'Sign up') }
+        it { should have_selector('title', :text => 'sign up') }
         it { should have_content('error') }
       end
 
@@ -79,7 +79,7 @@ describe "User pages" do
         before { click_button submit }
         let(:user) { User.find_by_email("user@example.com") }
 
-        it { should have_link('Sign out') }
+        it { should have_link('sign out') }
         it { should have_selector('title', :text => user.name) }
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
@@ -94,12 +94,12 @@ describe "User pages" do
     end
 
     describe "page" do
-      it { should have_content("Update your profile") }
-      it { should have_selector('title', :text => "Edit user") }
+      it { should have_content("update your settings") }
+      it { should have_selector('title', :text => "update your settings") }
     end
 
     describe "with invalid information" do
-      before { click_button "Save changes" }
+      before { click_button "save changes" }
 
       it { should have_content('error') }
     end
@@ -111,13 +111,13 @@ describe "User pages" do
         fill_in "Name",             with: new_name
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password
-        fill_in "Confirm Password", with: user.password
-        click_button "Save changes"
+        fill_in "confirm Password", with: user.password
+        click_button "save changes"
       end
 
       it { should have_selector('title', :text => new_name) }
       it { should have_selector('div.alert.alert-success') }
-      it { should have_link('Sign out', href: signout_path) }
+      it { should have_link('sign out', href: signout_path) }
       specify { expect(user.reload.name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end
