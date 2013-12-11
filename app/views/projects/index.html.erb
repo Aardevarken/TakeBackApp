@@ -23,50 +23,5 @@
 
 
 
-<!--<table center>
-	<thead>
-		<tr>
-			<th> Project Title </th>
-			<th>    </th>
-			<th> Project Location </th>
-			<th>     </th>
-			<th> More Actions </th>
-			<th>     </th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @current_user.projects.each do |project| %>
-			<tr>
-				<td><%= project.title %></td>
-				<th>    </th>
-				<td><%= project.location %></td>
-				<td><%= link_to "show", project %></td>
-    			<td><%= link_to "edit", edit_project_path(project) %></td>
-    			<td><%= link_to "remove", project, method: :delete, data: { confirm: "are you sure?" } %></td>
-			<tr>
-		<% end %>
-	</tbody>
-</table>
-
- 
-</div>-->
-
-
-<!--
-
-<div class="span8 center">
-
-    <% if current_user.projects.any? %>
-      <h3>Projects (<%= current_user.projects.count %>)</h3>
-      <ol class="projects">
-        <%= render @projects %>
-      </ol>
-      <%= will_paginate @projects %>
-    <% end %>
-  </div>
-</div>
-
--->
-
 
 <!--<%= link_to "create a new project", new_project_path %>-->
