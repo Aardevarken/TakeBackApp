@@ -28,6 +28,7 @@ class ProjectsController < ApplicationController
 
   def index
 	  #@user = User.find(params[:id])
+    @search = Project.search(params[:search])
     @projects = current_user.projects.paginate(page: params[:page])
   end
 
