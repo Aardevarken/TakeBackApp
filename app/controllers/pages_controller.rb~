@@ -1,0 +1,10 @@
+class PagesController < ApplicationController::Base
+
+	def search
+
+	end
+
+	def result
+
+	end
+end
