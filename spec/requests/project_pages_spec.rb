@@ -13,6 +13,9 @@ describe "ProjectPages" do
 		describe "with invalid information " do
 			it "should not create a project " do
 				expect { follow "Add a New Project"}.not_to change( Project, :count)
+			end
+		end
+	end
 
 
 
