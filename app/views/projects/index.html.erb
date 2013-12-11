@@ -14,11 +14,12 @@
  		<%= link_to "remove", project, method: :delete, data: { confirm: "are you sure?" } %>
  		<br><br>
  	<% end %>
-
- 	<% else %>
- 	<h3> <%= link_to "sign in", signin_path %> or sign up to create a new project! </h3>
- 	<% end %>
  </div>
+
+ <% else %>
+ 	<h3> <%= link_to "sign in", signin_path %> or <%= link_to "sign up", signup_path %> to work on your projects! </h3>
+ <% end %>
+ 
 </div>
 
 
