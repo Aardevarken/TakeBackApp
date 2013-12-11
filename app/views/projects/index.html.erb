@@ -2,6 +2,8 @@
 
 <div class="span8 center">
  <img src= "http://www.businessblogshub.com/wp-content/uploads/2010/12/building_online_community.jpg" width="480" height="320">
+
+<% if signed_in? %>
 <h1>work on your projects</h1>
  <div class="span6 offset3 center">
  	<% @current_user.projects.each do |project| %>
@@ -11,6 +13,10 @@
  		<%= link_to "edit", edit_project_path(project) %>
  		<%= link_to "remove", project, method: :delete, data: { confirm: "are you sure?" } %>
  		<br><br>
+ 	<% end %>
+
+ 	<% else %>
+ 	<h3> <%= link_to "sign in", signin_path %> or sign up to create a new project! </h3>
  	<% end %>
  </div>
 </div>
