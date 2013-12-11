@@ -3,7 +3,10 @@ class ProjectsController < ApplicationController
   before_filter :correct_user,   only: :destroy
 
   def show
+    #if signed_in?
     @project = current_user.projects.find(params[:id])
+    #else
+    #end
     #@projects = @user.projects.paginate(page: params[:page])
    end
 
@@ -28,8 +31,10 @@ class ProjectsController < ApplicationController
 
   def index
 	  #@user = User.find(params[:id])
-    @search = Project.search(params[:search])
-    @projects = current_user.projects.paginate(page: params[:page])
+
+    if signed_in?
+      @projects = current_user.projects.paginate(page: params[:page])
+    end
   end
 
   def update

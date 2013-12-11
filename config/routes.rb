@@ -12,7 +12,10 @@ TakeBackApp::Application.routes.draw do
   delete '/signout', to: 'sessions#destroy'
   get '/create', to: 'projects#new'
   get '/work', to: 'projects#index'
+
   get '/search', to: 'projects#search'
+
+
 #  get '/search', to: 'projects#show'
 
   # The priority is based upon order of creation:
