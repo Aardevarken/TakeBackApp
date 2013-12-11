@@ -3,8 +3,8 @@ class ProjectsController < ApplicationController
   before_filter :correct_user,   only: :destroy
 
   def show
-    @user = User.find(params[:id])
-    @projects = @user.projects.paginate(page: params[:page])
+    @project = current_user.projects.find(params[:id])
+    #@projects = @user.projects.paginate(page: params[:page])
    end
 
 
@@ -32,10 +32,11 @@ class ProjectsController < ApplicationController
   end
 
   def update
+
   end
 
   def edit
-	@project = Project.find params[:id]
+	@project = current_user.projects.find(params[:id])
   end
 
   def destroy
