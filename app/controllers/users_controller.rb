@@ -13,8 +13,9 @@ class UsersController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:id])
-    @projects = @user.projects.paginate(page: params[:page])
+    #@user = User.find(params[:id])
+    #@projects = @user.projects.paginate(page: params[:page])
+    @users = User.all
   end
 
   def feed
