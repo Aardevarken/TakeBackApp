@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def feed
     # This is preliminary. See "Following users" for the full implementation.
-    Micropost.where("user_id = ?", id)
+    Project.where("user_id = ?", id)
   end
 
   def show
@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   def signed_in_user
       unless signed_in?
         store_location
-        redirect_to signin_url, notice: "please sign in"
+        redirect_to signin_url
       end
     end
 
