@@ -1,7 +1,23 @@
+<!-- MY PROJECTS PAGE-->
 
 <div class="span8 center">
-<h1>List of Projects</h1>
-<table>
+ <img src= "http://www.businessblogshub.com/wp-content/uploads/2010/12/building_online_community.jpg">
+<h1>work on your projects</h1>
+ <div class="span6 offset3 center">
+ 	<% @current_user.projects.each do |project| %>
+ 		<br><br>
+ 		<%= link_to project.title, project %><br> 
+ 		<%= project.location %> <br>
+ 		<%= link_to "edit", edit_project_path(project) %>
+ 		<%= link_to "remove", project, method: :delete, data: { confirm: "are you sure?" } %>
+ 		<br><br>
+ 	<% end %>
+ </div>
+</div>
+
+
+
+<!--<table center>
 	<thead>
 		<tr>
 			<th> Project Title </th>
@@ -18,16 +34,16 @@
 				<td><%= project.title %></td>
 				<th>    </th>
 				<td><%= project.location %></td>
-				<td><%= link_to "Show", project %></td>
-    			<td><%= link_to "Edit", edit_project_path(project) %></td>
-    			<td><%= link_to "Remove", project, method: :delete, data: { confirm: "Are you sure?" } %></td>
+				<td><%= link_to "show", project %></td>
+    			<td><%= link_to "edit", edit_project_path(project) %></td>
+    			<td><%= link_to "remove", project, method: :delete, data: { confirm: "are you sure?" } %></td>
 			<tr>
 		<% end %>
 	</tbody>
 </table>
 
  
-</div>
+</div>-->
 
 
 <!--
@@ -47,4 +63,4 @@
 -->
 
 
-<%= link_to "Add New Project", new_project_path %>
+<!--<%= link_to "create a new project", new_project_path %>-->

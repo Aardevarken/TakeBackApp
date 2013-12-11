@@ -1,28 +1,19 @@
-<div class="span8">
-<h1>Project Information</h1>
-	<p>
-	  Title: 
-	  <%= @project.title %>
-	</p>
- 
- 	<p>
- 		Location: 
-  		<%= @project.location %>
-	</p>
+<!-- INDIVIDUAL PROJECT PAGE-->
 
-	<p>
-  		Description: 
-  		<%= @project.description %>
-	</p>
+<div class="span8 center">
+<img src=
+"http://api.ning.com/files/42l1pJtKIjrRS*8d6*g8vDie7EyZliawTY3NCn5wMgi5c2iE0Ij*Fir7hhSFZE2LgtB3BL0xi0UM3mJ2qWD4LGJf5qSAV7L6/iStock_000001601620XSmall.jpg">
+<h1><%= @project.title %> in <%= @project.location %></h1>
+ <!--<h2> by <%=@project.user_id %> </h2>-->
+  <br><br><i><%= @project.description %></i><br><br>
 
-	<p>
-  		Created By:
-   		<%=@current_user.name %>
- 	</p>
+    <!--created: <%= time_ago_in_words(@project.created_at) %> ago!-->
 
- 	<p>
-    	Created: 
-    	<%= time_ago_in_words(@project.created_at) %> ago!
-    </p>
+
+    <h2> work on this project </h2>
+
+
+
+
 
 </div>
