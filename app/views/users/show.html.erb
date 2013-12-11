@@ -1,20 +1,17 @@
 <!--PROFILE PAGE-->
 
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4 center">
+<div class="span8 center">
     <img src="http://purethinking.typepad.com/.a/6a00e54ee2334e8834013485dfaefd970c-400wi">
-    <section>
       <h1>
-        <%= @user.name %>
+        <%= @user.name %>'s <%= link_to "projects", work_path %>
       </h1>
-    </section>
-
-    <!--<%= link_to "add new project", new_project_path %>-->
+</div>
+    
    
 
 
-  </aside>
+<!--
   <div class="span8 center">
     <% if @user.projects.any? %>
       <h3>Projects (<%= @user.projects.count %>)</h3>
@@ -24,6 +21,3 @@
       <%= will_paginate @projects %>
     <% end %>
   </div>
-</div>
-
-  
