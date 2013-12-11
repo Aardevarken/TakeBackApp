@@ -1,11 +1,8 @@
-class PagesController < ApplicationController::Base
+class PagesController < ApplicationController
+  def search
+  end
 
-	def search
+  def result
+  end
 
-	end
-
-	def result
-		@project = Project.where("location LIKE ?", "#{params[:search]}%")
-   		render :action => :index
-	end
 end

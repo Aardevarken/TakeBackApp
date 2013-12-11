@@ -24,17 +24,36 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def search
-    @project = Project.where("location LIKE ?", "#{params[:search]}%")
-    render :action => :index
-  end
+  # def search
+  #   if :search_query
+  #     @projects = Project.search(params[:search_query])
+  #     @projects = @projects.sort!{ |x, y| x["created_at"] <=> y["created_at"] }.reverse
+  #   else
+  #     @projects = Project.find(:all, :order => 'projects.created_at').reverse
+  #   end
+  
+    
+  # end
+  #   @project = Project.where("location LIKE ?", "#{params[:search]}%")
+  #   render :action => :index
+  # end
 
   def index
 	  #@user = User.find(params[:id])
-
-    if signed_in?
-      @projects = current_user.projects.paginate(page: params[:page])
+   if :search_query
+      @projects = Project.search(params[:search_query])
+       @projects = @projects.sort!{ |x, y| x["created_at"] <=> y["created_at"] }.reverse
+     else
+       @projects = Project.find(:all, :order => 'projects.created_at').reverse
     end
+
+    # if signed_in?
+    #   @projects = current_user.projects.paginate(page: params[:page])
+    
+    # else
+    #   @projects = Project.all
+    # end
+
   end
 
   def update

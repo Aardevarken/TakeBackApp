@@ -5,4 +5,10 @@ class Project < ActiveRecord::Base
 	validates :title, presence: true
 	validates :description, presence: true
 	validate :location, presence: true
+
+	 def self.search(search_query)
+
+		find(:all, :conditions => ['name LIKE ?', "%#{search_query}%"])
+
+	end 
 end
