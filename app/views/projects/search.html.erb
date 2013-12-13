@@ -1,0 +1,36 @@
+
+
+<%= form_tag projects_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<ul>
+  <% for project in @projects %>
+  <li>
+    <%= link_to project.title, project_path(project) %>
+  </li>
+  <% end %>
+</ul>
+
+
+<!--
+<h1>Search For Projects</h1>
+
+<div class="row">
+  <div class="span6 offset3 center" >
+
+    <% if signed_in? %>
+      <%= form_tag("/search", method: "get") do %>
+        <%= label_tag(:q, "Search by Location:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+    <% end %>
+
+  </div>
+</div>
+-->
+
