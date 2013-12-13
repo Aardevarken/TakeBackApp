@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
-      redirect_to work_url
+      redirect_to project_path(@project)
     else
       flash[:warning] = "it didn't work. try again."
       render 'static_pages/home'
