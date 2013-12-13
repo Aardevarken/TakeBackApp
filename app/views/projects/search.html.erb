@@ -1,20 +1,24 @@
 
 <div class= "span6 center">
+  <img src="http://farm6.staticflickr.com/5486/11349145173_75fb8f01da.jpg" alt="takeback logo"> 
+  <h1> search for projects </h1>
   <br>
-    <%= form_tag projects_path, :method => 'get' do %>
+    <h2><%= form_tag projects_path, :method => 'get' do %>
       <p> <%= text_field_tag :search, params[:search] %>
         <%= submit_tag "Search", :name => nil %>
-      </p>
+      </p></h2>
     <% end %>
   
   <br>
 
-
+<!--THIS code is just showing the user's current projects-->
+<!--
   <% for project in @projects %>
     <h3><%= link_to project.title, project_path(project) %> <h3>
   <% end %>
 
 </div>
+-->
 
 
 <!--
