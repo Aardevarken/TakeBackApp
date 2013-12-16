@@ -3,11 +3,14 @@ class ProjectsController < ApplicationController
   before_filter :correct_user,   only: :destroy
 
   def show
-    #if signed_in?
-    @project = current_user.projects.find(params[:id])
+    #if current_user?
+     # @project = current_user.projects.find(params[:id])
     #else
+      #@project = current_user.projects.find(params[:id])
     #end
-    #@projects = @user.projects.paginate(page: params[:page])
+    if @user.nil? || current_user.nil?
+      @project = Project.find(params[:id])
+    end
    end
 
 
@@ -26,6 +29,9 @@ class ProjectsController < ApplicationController
 
   def search
      @projects = Project.search(params[:search])
+     if @projects.empty?
+      flash.now[:warning] = "No result found"
+    end
   end
   
     
