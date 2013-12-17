@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
 	validate :location, presence: true
     def self.search(search)
 	  if search
-	    find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+	    find(:all, :conditions => ['location LIKE ?', "%#{search}%"])
 	  else
 	    find(:all)
 	  end

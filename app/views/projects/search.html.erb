@@ -14,7 +14,7 @@
 <!--THIS code is just showing the user's current projects-->
 
   <% for project in @projects %>
-    <h3><%= link_to project.title, project_path(project) %> <h3>
+    <h3><%= link_to project.title, project_path(project) %> in <%= project.location %> <h3>
   <% end %>
 
 </div>
