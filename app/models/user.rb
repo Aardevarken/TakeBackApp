@@ -1,3 +1,6 @@
+#This is the model for a single user, 
+#which can be either an administrator or 
+
 class User < ActiveRecord::Base
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
