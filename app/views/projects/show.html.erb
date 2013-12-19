@@ -7,7 +7,15 @@
  <!--<h2> by <%=@project.user_id %> </h2>-->
   <body><i><%= @project.description %></i><br><br></body>
 
-    <!--created: <%= time_ago_in_words(@project.created_at) %> ago!-->
+    <!--created: <%= time_ago_in_words(@project.created_at) %> ago!
+    
+    Created at: <%= (@project.created_at) %> 
+      <%= @project = Project.find(params[:id]) %>
+    <%= @user = User.find(params[@project.user_id]) %>
+    Created By: <%= @user.name %>
+   
+
+    -->
 
 
     <img src="http://farm6.staticflickr.com/5479/11319934154_d70d1fdde4.jpg" width="500" height="187" alt="ways to work"></a>

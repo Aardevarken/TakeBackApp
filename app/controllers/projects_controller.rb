@@ -1,6 +1,12 @@
+#This file is for the project controller which ties the different actions with
+#corresponding views and models
+
+
 class ProjectsController < ApplicationController
-  #before_filter :signed_in_user
+  
   before_filter :correct_user,   only: :destroy
+
+  #This method shows a single project
 
   def show
     #if current_user?
@@ -11,12 +17,14 @@ class ProjectsController < ApplicationController
     if @user.nil? || current_user.nil?
       @project = Project.find(params[:id])
     end
+
    end
 
-
+   #The method which initiates the form of creating a new project
   def new
   end
 
+  #The action of creating the project itself
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
@@ -27,6 +35,7 @@ class ProjectsController < ApplicationController
     end
   end
 
+#The searching method applied on projects
   def search
      @projects = Project.search(params[:search])
      if @projects.empty?
@@ -35,10 +44,7 @@ class ProjectsController < ApplicationController
   end
   
     
-  # end
-  #   @project = Project.where("location LIKE ?", "#{params[:search]}%")
-  #   render :action => :index
-  
+#Showing the index or total list of projects
 
   def index
 	  #@user = User.find(params[:id])
